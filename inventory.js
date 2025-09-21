@@ -109,3 +109,47 @@ inventory[i].quantity < 10
 updateStockDecrease(4, 4);
 console.log(inventory)
  
+// Generate Report: A function to show a summary of the inventory, including the total number of products, their value, and a list of low-stock items.
+function generateReport(){}
+console.log(inventory.length)
+// function totalValue(){
+    let totalCost = 0
+    for (let i = 0; i < inventory.length; i++) {
+         let price = inventory[i].price;
+         let quantity = inventory[i].quantity;
+        //  let sum = price * quantity;  
+          totalCost += price * quantity;;
+    }
+    console.log(totalCost);
+ 
+// }
+// totalValue()
+function printLowStock(){
+  let lowstockItems = inventory.filter(
+    function(product){
+         return product.quantity < 10
+        //  ?console.log(`${product.name}`)
+        //  :console.log(false)
+        //  console.log(`${product.name} is ${product.quantity}`)
+    })
+    lowstockItems.forEach(function(product) {
+    console.log(`${product.name} is low in stock: ${product.quantity}`);
+    console.log("The list of items in the inventory: ");
+    inventory.forEach((product, index) => {
+  console.log (`${index + 1}. ${product.name}`);
+});
+});
+}
+ 
+ 
+printLowStock()
+function generateReport(){
+    let report = `Total Quantity of products is ${inventory.length}`
+    console.log(report)
+}
+ 
+console.log("The total cost of all products in the inventory is NGN" + totalCost)
+ 
+generateReport()
+console.log(inventory.length)
+console.log(totalCost);
