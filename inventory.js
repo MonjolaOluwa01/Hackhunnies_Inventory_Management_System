@@ -39,3 +39,28 @@ addProduct(12, "Perfume", 500, 10)
 addProduct(13, "Tissue Paper", 300, 11);
 addProduct(14, "Noodles", 250, 2);
 addProduct(15, "Detergent", 200, 15);
+
+
+// Remove products
+
+function removeProduct(id) {
+    const productToRemove = inventory.find(product => product.id === id);
+    if (!productToRemove) {
+        console.log("Product not found");
+        return;
+}
+ 
+  //inventory = inventory.filter(product => product.id !== id);
+ 
+  inventory = inventory.filter((product) => (product.id !== id))        
+ 
+ 
+ 
+  console.log(`${productToRemove.name} removed from inventory`);
+ 
+}
+ 
+removeProduct(3)
+ 
+console.log(inventory)
+ 
