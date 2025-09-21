@@ -64,3 +64,48 @@ removeProduct(3)
  
 console.log(inventory)
  
+
+ 
+// function updatestock
+ 
+function updateStockIncrease(id, quantityAdded) {
+ 
+for (let i = 0; i < inventory.length; i++) {
+ 
+if (inventory[i].id === id) {
+ 
+inventory[i].quantity += quantityAdded
+ 
+inventory[i].quantity < 10
+  ? console.log("Lowstock")
+  : console.log(`Updated quantity of ${inventory[i].name} is ${inventory[i].quantity}`);
+}
+ 
+else{
+    console.log("Invalid id")
+}
+}
+}
+updateStockIncrease(7, 3);
+updateStockIncrease(11, 2);
+ 
+console.log(inventory)
+ 
+function updateStockDecrease(id, quantityRemoved) {
+ 
+    for (let i = 0; i < inventory.length; i++) {
+ 
+if (inventory[i].id === id) {
+ 
+inventory[i].quantity -= quantityRemoved
+ 
+inventory[i].quantity < 10
+  ? console.log(inventory[i].name + " :Lowstock")
+  : console.log(`Updated quantity of ${inventory[i].name} is ${inventory[i].quantity}`);
+}
+}
+}
+ 
+updateStockDecrease(4, 4);
+console.log(inventory)
+ 
